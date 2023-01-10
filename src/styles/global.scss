@@ -1,0 +1,88 @@
+body {
+    background-color: #F6F5F5;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    font-size: 1.4rem;
+    overflow-x: hidden;
+}
+
+.pagination {
+    margin-top: 3rem;
+
+    & ul {
+        justify-content: center;
+    }
+}
+
+.colors {
+    margin: 0 auto;
+
+    &__list {
+        background-color: #fafafa;
+        height: 366px;
+        padding: 2rem !important;
+    }
+}
+
+.inputField {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: .1);
+}
+
+.modal {
+    background-color: #f3f4f6;
+    box-shadow: 0 2px 8px rgba($color: #000000, $alpha: .26);
+    border-radius: 10px;
+    z-index: 20;
+    width: 50%;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+
+    &__content {
+        padding: 1rem 3rem;
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        border: 1px solid #94a3b8;
+
+        & span {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        & p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.button {
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1.5rem 2rem;
+    background-color: aquamarine;
+}
+
+// @media (min-width: 768px) {
+//     .modal {
+//         left: calc(50% - 20rem);
+//         width: 40rem;
+//     }
+// }
