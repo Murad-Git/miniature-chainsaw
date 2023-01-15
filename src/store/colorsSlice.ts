@@ -3,14 +3,14 @@ import { PayloadAction } from '@reduxjs/toolkit/dist/createAction';
 import { ColorState } from '../types/main';
 import { RootState } from './store';
 
-const getCurPage = () => {
+export const getCurPage = () => {
   const curPage = window.location.pathname.includes('/page')
     ? +window.location.pathname.slice(-1)
     : 1;
   return curPage;
 };
 
-interface ColorsState {
+export interface ColorsState {
   colors: ColorState[] | null;
   filteredColors: ColorState | null;
   currentPage: number;
@@ -44,9 +44,9 @@ export const colorsSlice = createSlice({
     },
   },
 });
-export const colorsValue = (state: RootState) => state.colors;
-export const curPageValue = (state: RootState) => state.currentPage;
-export const filteredColors = (state: RootState) => state.filteredColors;
+export const colorsValue = (state: RootState) => state.user.colors;
+export const curPageValue = (state: RootState) => state.user.currentPage;
+export const filteredColors = (state: RootState) => state.user.filteredColors;
 export const { saveColors, changeCurPage, changefilteredColors } =
   colorsSlice.actions;
 export default colorsSlice.reducer;

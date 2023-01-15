@@ -30,31 +30,8 @@ const Colors = () => {
     colorsPerPage();
   }, [currentPage, colors]);
 
-  // const filteredColors = useCallback(() => {
-  //   if (currentColorId > 0) {
-  //     const filtered = colors?.find((color) => color.id === currentColorId);
-  //     return filtered && <Color color={filtered} />;
-  //   }
-  //   if (curColors) {
-  //     const colorsPerPage = curColors.map((color: ColorState) => (
-  //       <Color color={color} key={color.id} />
-  //     ));
-  //     return colorsPerPage;
-  //   }
-  // }, [colors, currentColorId, curColors]);
-  // const ColorsList = useCallback(() => {
-  //   if (curColors) {
-  //     const filtered = curColors.map((color: ColorState) => (
-  //       <Color color={color} key={color.id} />
-  //     ));
-  //     return filtered
-  //   }
-  //   else return <Color color={curColors} />;
-
-  // }, [curColors]);
-
   if (!colors) {
-    return <div>Error in data fetching</div>;
+    return <div>Loading...</div>;
   }
 
   return (
@@ -67,10 +44,6 @@ const Colors = () => {
           <Color color={color} key={color.id} />
         ))
       )}
-      {/* {curColors &&
-        curColors.map((color: ColorState) => (
-          <Color color={color} key={color.id} />
-        ))} */}
     </>
   );
 };

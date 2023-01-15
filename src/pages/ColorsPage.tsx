@@ -23,9 +23,6 @@ const ColorsPage = () => {
     <Box sx={{ flexGrow: 1, maxWidth: 752 }} className='colors'>
       <Grid container>
         <Grid item xs={12} md={12}>
-          {/* <Typography sx={{ mt: 4, mb: 2 }} variant='h6' component='div'>
-            Text only
-          </Typography> */}
           <List className='colors__list'>
             <Colors />
           </List>

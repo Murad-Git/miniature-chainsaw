@@ -11,7 +11,7 @@ import { useAppDispatch } from '../types/hooks';
 
 const inputProps = { 'aria-label': 'colorId', min: '1' };
 
-const InputField = () => {
+const InputField = ({ onSubmit }: { onSubmit?: () => void }) => {
   const dispatch = useAppDispatch();
   const handleInputChange = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
@@ -34,6 +34,12 @@ const InputField = () => {
           id='color-id'
           margin='dense'
           onChange={handleInputChange}
+          onKeyDown={(e) => {
+            if (onSubmit) {
+              e.preventDefault();
+              onSubmit();
+            }
+          }}
         />
         <FormHelperText id='my-helper-text'>
           Input your favourite color ID
